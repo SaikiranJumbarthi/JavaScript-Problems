@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-3</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="inputNumber" placeholder="Enter any string()" />
+      <br />
+      <button onclick="getLargest()">Largest</button>
+      <h1 id="result"></h1>
+    </div>
+
+    <script>
+      function getLargest() {
+        const myInput = document
+          .getElementById("inputNumber")
+          .value.split(",")
+          .map(Number);
+        const mylargest = Math.max(...myInput);
+        document.getElementById("result").textContent = mylargest;
+      }
+    </script>
+  </body>
+</html>
