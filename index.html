@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-6</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        transition: background-color 0.5s ease-in-out;
+      }
+      h1 {
+        color: #333;
+        margin-top: 50px;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Changing Background</h1>
+    <button id="colorbutton">Change color</button>
+
+    <script>
+      const colorbutton = document.getElementById("colorbutton");
+      colorbutton.addEventListener("click", () => {
+        const randomcolor = getRandomColor();
+        document.body.style.backgroundColor = randomcolor;
+      });
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html>
